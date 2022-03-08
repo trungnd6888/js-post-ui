@@ -7,12 +7,32 @@ const axiosClient = axios.create({
   },
 });
 
+// Add a request interceptor
+axiosClient.interceptors.request.use(
+  function (config) {
+    return config;
+  },
+  function (error) {
+    return Promise.reject(error);
+  }
+);
+
+// Add a response interceptor
 axiosClient.interceptors.response.use(
-  (response) => {
+  function (response) {
     return response.data;
   },
-  (error) => {
-    return Promise.reject(error);
+  function (error) {
+    if (!error.response) throw new Error('Network error. Please try again later.');
+
+    if (error.response.status === 401) {
+      //clear token, logout
+      window.location.assign('/login.html');
+      return;
+    }
+
+    // return Promise.reject(error);
+    throw new Error(error);
   }
 );
 
