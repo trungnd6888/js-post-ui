@@ -6,3 +6,9 @@ export function setTextContent(element, queryString, text) {
 
   queryElement.textContent = text;
 }
+
+export function truncateText(text, maxLength) {
+  if (!text) return;
+
+  return text.length > maxLength ? `${text.slice(0, maxLength - 1)}…` : text;
+}

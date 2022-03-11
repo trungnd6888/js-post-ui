@@ -174,23 +174,36 @@
         <div class="container">
           <h1 class="with-underline text-center">Latest posts</h1>
 
+          <!-- Search Box -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="search">Search</span>
+            <input
+              id="searchInput"
+              type="text"
+              class="form-control"
+              placeholder="search by post title"
+              aria-label="search"
+              aria-describedby="search"
+            />
+          </div>
+
           <!-- Posts list -->
           <ul id="postsList" class="row posts-list justify-content-center"></ul>
 
           <!-- Posts pagination -->
           <nav class="posts-nav" aria-label="Posts navigation">
-            <ul hidden id="postsPagination" class="pagination justify-content-center">
+            <ul id="pagination" class="pagination justify-content-center">
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
+                  <span aria-hidden="true">&laquo; Pre</span>
                 </a>
               </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
+                  <span aria-hidden="true">Next &raquo;</span>
                 </a>
               </li>
             </ul>
