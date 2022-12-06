@@ -39,6 +39,13 @@ a:hover > i {
   transform: rotate(90deg);
 }
 
+a#goToEditPageLink {
+  color: rgb(219, 144, 5);
+}
+a#goToEditPageLink > i {
+  transform: none;
+}
+
 /* Add underline for all h1 */
 h1.with-underline {
   position: relative;
